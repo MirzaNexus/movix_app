@@ -1,6 +1,6 @@
 import "./style.scss";
 const ContentWrapper = ({ children }) => {
-  return <div className="content-wrapper">{children}</div>;
+  return <div className="contentWrapper">{children}</div>;
 };
 
 export default ContentWrapper;

@@ -13,7 +13,7 @@ const HeroBanner = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
-  const { data } = useFetch("/movie/upcoming");
+  const { data, loading } = useFetch("/movie/upcoming");
 
   useEffect(() => {
     const bg =
@@ -30,12 +30,11 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-      {/* {!loading && (
-        <div className="backdrop-img">
-          <img src={background} alt="this is the img" />
-        </div>
-      )} */}
-      <img className="backdrop-img" src={background} alt="this is the img" />
+      {!loading && (
+        <img src={background} alt="this is the img" className="backdrop-img" />
+      )}
+
+      {/* <img className="backdrop-img" src={background} alt="this is the img" /> */}
       <div className="opacity-layer"></div>
       <ContentWrapper>
         <div className="heroBannerContent">
